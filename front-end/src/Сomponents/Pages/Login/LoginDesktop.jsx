@@ -1,7 +1,7 @@
-import SignInForm from '../../../components/common/SignInForm';
+import SignInForm from '../../common/SignInForm';
 import SignUpForm from '../../common/SignUpForm.jsx';
 
-export default function HomeDesktop({screen, setScreen, isMobile}) {
+export default function LoginDesktop({screen, setScreen, isMobile}) {
     return (
         <div className="min-h-screen bg-slate-50 flex items-center justify-center p-12 relative overflow-hidden font-sans text-slate-950">
 

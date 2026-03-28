@@ -1,6 +1,6 @@
 import {useDevice} from '../../../hooks/useDevice.js';
 
-export default function AccountPage() {
+export default function HomePage() {
     const {isMobile} = useDevice();
     const commonProps = {isMobile};
 

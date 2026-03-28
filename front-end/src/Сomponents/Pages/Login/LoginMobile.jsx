@@ -1,7 +1,7 @@
-import SignInForm from '../../../components/common/SignInForm';
+import SignInForm from '../../common/SignInForm';
 import SignUpForm from '../../common/SignUpForm.jsx';
 
-export default function HomeMobile({screen, setScreen, isMobile}) {
+export default function LoginMobile({screen, setScreen, isMobile}) {
     return (
         <div className="min-h-svh bg-slate-50 p-6 flex flex-col relative overflow-hidden font-sans">
 

@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { useDevice } from '../../../hooks/useDevice.js';
 
-import HomeMobile from './HomeMobile.jsx';
-import HomeDesktop from './HomeDesktop.jsx';
+import LoginMobile from './LoginMobile.jsx';
+import LoginDesktop from './LoginDesktop.jsx';
 
-export default function HomePage() {
+export default function LoginPage() {
     const { isMobile } = useDevice();
     const [screen, setScreen] = useState('welcome');
     const commonProps = { screen, setScreen, isMobile };
 
     return isMobile
-        ? <HomeMobile {...commonProps} />
-        : <HomeDesktop {...commonProps} />;
+        ? <LoginMobile {...commonProps} />
+        : <LoginDesktop {...commonProps} />;
 }
