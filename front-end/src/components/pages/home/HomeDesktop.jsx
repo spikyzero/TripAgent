@@ -1,5 +1,5 @@
 import SignInForm from '../../../components/common/SignInForm';
-import SignUpForm from '../../../components/common/SignUpForm';
+import SignUpForm from '../../common/SignUpForm.jsx';
 
 export default function HomeDesktop({screen, setScreen, isMobile}) {
     return (
