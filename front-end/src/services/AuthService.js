@@ -1,27 +1,26 @@
+import config from '../config/appConfig.js';
+
 class AuthService {
 
     static async login(email, password) {
-        const url = 'http://192.168.0.16:8080/api/v1/authentication/authenticate';
-        const requestOptions = {
+        const url = `${config.apiBaseUrl}${config.endpoints.authenticate}`;
+        const options = {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({email, password}),
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({email, password})
         };
-        try {
-            const response = await fetch(url, requestOptions);
 
+        try {
+            const response = await fetch(url, options);
             if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.message || 'Login failed');
+                const error = await response.json().catch(() => ({}));
+                throw new Error(error.message || 'Not authenticated');
             }
             const data = await response.json();
             localStorage.setItem('jwt', data.token);
             localStorage.setItem('userId', data.userDTO.id);
             return data;
         } catch (error) {
-            console.error('Login error:', error);
             throw error;
         }
     }
