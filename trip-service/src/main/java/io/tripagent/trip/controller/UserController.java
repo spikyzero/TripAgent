@@ -27,7 +27,7 @@ public class UserController {
         this.userFacade = userFacade;
     }
 
-    @CrossOrigin(origins = {"http://localhost:5173", "http://192.168.0.17:5173"})
+    @CrossOrigin(origins = {"http://localhost:5173", "http://192.168.0.16:5173"})
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody UserRegistrationForm userForm) {
         try {
@@ -76,7 +76,7 @@ public class UserController {
         }
     }
 
-    @CrossOrigin(origins = {"http://localhost:5173", "http://192.168.0.17:5173"})
+    @CrossOrigin(origins = {"http://localhost:5173", "http://192.168.0.16:5173"})
     @GetMapping("/exists/email")
     public ResponseEntity<Boolean> checkUserExistsByEmail(@RequestParam String email) {
         boolean exists = userFacade.existUserByEmail(email);

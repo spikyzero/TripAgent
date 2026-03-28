@@ -52,7 +52,7 @@ public class AuthenticationController {
         return "Welcome to USER home!";
     }
 
-    @CrossOrigin(origins = {"http://localhost:5173", "http://192.168.0.17:5173"})
+    @CrossOrigin(origins = {"http://localhost:5173", "http://192.168.0.16:5173"})
     @PostMapping("/authenticate")
     public ResponseEntity<?> authenticateAndGetToken(@Valid @RequestBody UserLoginForm loginForm) {
         try {

@@ -1,7 +1,7 @@
 class AuthService {
 
     static async login(email, password) {
-        const url = 'http://192.168.0.17:8080/api/v1/authentication/authenticate';
+        const url = 'http://192.168.0.16:8080/api/v1/authentication/authenticate';
         const requestOptions = {
             method: 'POST',
             headers: {

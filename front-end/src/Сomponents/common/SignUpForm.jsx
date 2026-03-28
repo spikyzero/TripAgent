@@ -55,7 +55,7 @@ export default function SignUpForm({ onToggle, isMobile }) {
             const result = await UserService.register(formData);
             if (result.success) {
                 await AuthService.login(formData.email, formData.password);
-                navigate('/account');
+                navigate('/');
             } else {
                 setError(result.error || 'Ошибка при регистрации');
             }

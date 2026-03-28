@@ -17,7 +17,7 @@ export default function SignInForm({ onToggle, isMobile }) {
         try {
             const data = await AuthService.login(email, password);
             console.log('Login successful', data);
-            navigate('/account');
+            navigate('/');
         } catch (error) {
             console.error('Login error:', error);
             setError('Упс! Проверьте введенные данные');

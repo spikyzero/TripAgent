@@ -2,7 +2,7 @@ class UserService {
 
     async register(formData) {
         try {
-            const response = await fetch('http://192.168.0.17:8080/api/v1/users/register', {
+            const response = await fetch('http://192.168.0.16:8080/api/v1/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ class UserService {
 
     async checkExistByEmail(email) {
         try {
-            const response = await fetch(`http://192.168.0.17:8080/api/v1/users/exists/email?email=${email}`);
+            const response = await fetch(`http://192.168.0.16:8080/api/v1/users/exists/email?email=${email}`);
             if (response.ok) {
                 const data = await response.json();
                 return {data};
