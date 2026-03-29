@@ -19,6 +19,7 @@ export default function SignUpForm({ onToggle, isMobile }) {
     const [emailExists, setEmailExists] = useState(false);
     const [error, setError] = useState('');
     const passwordsMatch = formData.password === formData.passwordConfirmation;
+    const isFormIncomplete = Object.values(formData).some(value => !value.trim());
     const navigate = useNavigate();
 
 
@@ -63,7 +64,7 @@ export default function SignUpForm({ onToggle, isMobile }) {
             return;
         }
 
-        if (!isValidPassword) {
+        if (!passwordsMatch) {
             setError('Пароли не совпадают');
             return;
         }
@@ -159,7 +160,7 @@ export default function SignUpForm({ onToggle, isMobile }) {
 
                 <button
                     type="submit"
-                    disabled={isLoading || emailExists || !passwordsMatch}
+                    disabled={isLoading || emailExists || !passwordsMatch || isFormIncomplete || !isValidEmail || !isValidName}
                     className="w-full bg-slate-950 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-slate-200 active:scale-[0.98] transition-all hover:bg-slate-900 disabled:bg-slate-400 flex justify-center items-center gap-2"
                 >
                     {isLoading ? 'Создаем аккаунт...' : 'Зарегистрироваться'}
